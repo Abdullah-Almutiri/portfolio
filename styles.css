@@ -5,7 +5,7 @@
   --bg-color: #e6e7ee; /* Soft light gray for neumorphism effect */
   --text-color: #2e384d; /* Darker text color for better contrast */
   --accent-color: #5e60ce;
-  --accent-gradient: linear-gradient(to bottom, #494491, #486cb5, #99b6e1);
+  --accent-gradient: linear-gradient(90deg, #ff758f, #765efb, #43e8d8);
   --font-family-en: 'Roboto', sans-serif; /* For English */
   --font-family-ar: 'Cairo', sans-serif; /* For Arabic */
   --font-size-large: 3rem;
@@ -479,7 +479,7 @@ img {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-image:  linear-gradient(to right, #8a3ab9, #bc2a8d, #f56040);
+  background-image: linear-gradient(45deg, #ff007f, #8700ff, #007aff);
 }
 
 .cv-download-button:hover,
@@ -784,17 +784,13 @@ textarea:focus {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: 
-    radial-gradient(circle at 25% 30%, rgba(180, 136, 255, 0.1), transparent 60%), /* Light lavender */
-    radial-gradient(circle at 75% 25%, rgba(150, 120, 230, 0.08), transparent 55%), /* Soft purple-blue */
-    radial-gradient(circle at 50% 70%, rgba(136, 120, 210, 0.07), transparent 55%), /* Muted purple */
-    radial-gradient(circle at 35% 65%, rgba(155, 144, 235, 0.06), transparent 50%), /* Soft lavender blue */
-    radial-gradient(circle at 65% 75%, rgba(180, 160, 250, 0.05), transparent 55%); /* Soft purple finish */
-  filter: blur(50px);
+  background: radial-gradient(circle at 30% 30%, rgba(94, 96, 206, 0.124), transparent 50%),
+              radial-gradient(circle at 70% 70%, rgba(255, 110, 199, 0.106), transparent 50%),
+              radial-gradient(circle at 50% 50%, rgba(114, 103, 240, 0.107), transparent 50%);
+  filter: blur(80px);
   z-index: -1; /* Ensure it's behind all content */
   pointer-events: none; /* Make it non-interactive */
 }
-
 
 @media (max-width: 768px) {
   .background-wrapper::before {
