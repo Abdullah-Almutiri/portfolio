@@ -367,7 +367,31 @@ html[dir="rtl"] .section-subtitle {
   .projects-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}/* ========================
+   Projects Section - Updated
+======================== */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
 }
+
+@media (min-width: 48rem) {
+  /* 768px */
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  /* 1024px */
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .project-card {
   background-color: #ffffff;
   border-radius: 1rem;
@@ -428,7 +452,6 @@ html[dir="rtl"] .project-card .content {
   }
 }
 
-
 /* Performance and Consistency Improvements */
 img {
   display: block;
@@ -485,6 +508,7 @@ img {
 /* ========================
    Frameworks Section
 ======================== */
+
 .frameworks-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -536,7 +560,6 @@ img {
   font-size: var(--font-size-base);
   color: #495057;
 }
-
 
 /* ========================
    Contact Section
@@ -834,4 +857,3 @@ header {
     color: var(--accent-color); /* Accent color on hover */
   }
 }
-
