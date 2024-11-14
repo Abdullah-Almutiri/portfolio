@@ -557,6 +557,12 @@ img {
   color: #495057;
 }
 
+.framework-item a {
+  font-size: var(--font-size-base);
+  color: #495057;
+}
+
+
 /* ========================
    Contact Section
 ======================== */
