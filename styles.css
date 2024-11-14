@@ -374,24 +374,23 @@ html[dir="rtl"] .section-subtitle {
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 1); /* Neumorphic shadow */
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
-  height: 250px;
+  padding: 1.5rem; /* Adjust padding to keep content within bounds */
+  min-height: 200px; /* Use min-height instead of fixed height */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 2rem; /* Add padding to bring content closer to the border */
+  text-align: center;
 }
 
 .project-card .content {
-  padding: 3rem; /* Reduce padding to make the text closer to the card's border */
-  text-align: center;
-  flex-grow: 3; /* Make the content grow to fill available space */
+  padding: 1rem; /* Reduce padding for better fit on small screens */
+  flex-grow: 1; /* Allow the content to grow */
 }
 
 html[dir="rtl"] .project-card .content {
   text-align: right;
 }
-
 
 .project-card:hover,
 .project-card:focus {
@@ -400,19 +399,11 @@ html[dir="rtl"] .project-card .content {
   outline: none;
 }
 
-.project-card .content {
-  padding: var(--spacing-medium);
-  text-align: left;
-}
-
-html[dir="rtl"] .project-card .content {
-  text-align: right;
-}
-
 .project-title {
   font-size: var(--font-size-medium);
   color: #2e384d;
   margin-bottom: 0.5rem;
+  word-wrap: break-word; /* Ensure text wraps properly */
 }
 
 .project-description {
@@ -420,39 +411,23 @@ html[dir="rtl"] .project-card .content {
   color: #495057;
   margin-bottom: 1rem;
   line-height: 1.6;
+  word-wrap: break-word; /* Ensure text wraps properly */
 }
 
-.project-link {
-  color: #5e60ce;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-title {
+    font-size: 1.5rem; /* Smaller font size on mobile */
+  }
+  .project-description {
+    font-size: 0.875rem; /* Smaller font size for better fit */
+    line-height: 1.4;
+  }
+  .project-card {
+    padding: 1rem; /* Reduce padding for better fit on smaller screens */
+  }
 }
 
-.project-link:hover,
-.project-link:focus {
-  color: #8b5cf6;
-  outline: none;
-}
-
-/* General Improvements */
-:root {
-  --spacing-large: 2rem;
-  --spacing-medium: 1.5rem;
-  --font-size-base: 1rem;
-  --font-size-medium: 1.25rem;
-  --accent-color: #6366f1; /* Consistent accent color for links */
-  --accent-gradient:  linear-gradient(to right, #a24bf9, #8a4bfe, #fc5e86); /* Gradient for title text */
-} 
-
-/* Accessibility Improvements */
-.project-card {
-  cursor: pointer; /* Better UX indicating cards are interactive */
-}
-
-.project-card:focus-visible {
-  outline: 2px solid #8b5cf6; /* Focus indication for improved accessibility */
-}
 
 /* Performance and Consistency Improvements */
 img {
