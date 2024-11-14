@@ -1,0 +1,804 @@
+/* ========================
+   Variables and Reset
+======================== */
+:root {
+  --bg-color: #e6e7ee; /* Soft light gray for neumorphism effect */
+  --text-color: #2e384d; /* Darker text color for better contrast */
+  --accent-color: #5e60ce;
+  --accent-gradient: linear-gradient(90deg, #ff758f, #765efb, #43e8d8);
+  --font-family-en: 'Roboto', sans-serif; /* For English */
+  --font-family-ar: 'Cairo', sans-serif; /* For Arabic */
+  --font-size-large: 3rem;
+  --font-size-medium: 1.75rem;
+  --font-size-base: 1rem;
+  --font-size-small: 0.875rem;
+  --spacing-base: 1rem;
+  --spacing-medium: 1.5rem;
+  --spacing-large: 2rem;
+  --header-height: 80px; /* Define header height */
+}
+.hidden {
+  display: none;
+}
+#language-toggle{
+  font-weight: bold;
+
+}
+
+/* New GitHub Button Styling */
+#git {
+  font-weight: bold;
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+  padding: 0.45rem 0.1rem;
+  text-decoration: none;
+}
+
+#git:hover {
+  color: var(--accent-color);
+}
+
+/* Reset and Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================
+   Global Styles
+======================== */
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family-ar); /* Default font for Arabic */
+  line-height: 1.6;
+  margin-top: var(--header-height); /* Prevent content from hiding behind fixed header */
+}
+
+body[dir="ltr"] {
+  font-family: var(--font-family-en); /* Switch to English font for LTR */
+}
+
+.container {
+  max-width: 80rem; /* 1280px */
+  margin: 0 auto;
+  padding: 0 var(--spacing-base);
+}
+
+/* ========================
+   Header Styles
+======================== */
+/* Header Styling */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: #ffffff;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 1); /* Neumorphic shadow */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Even spacing between logo and right section */
+  padding: 0 var(--spacing-base);
+}
+
+/* Container within the Header */
+header .container {
+  width: 100%;
+  max-width: 1200px; /* Control the max width for centered layout */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+/* Logo Styling */
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: var(--accent-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+/* Custom styling for active menu item */
+.nav-link.active {
+  color: #000000; /* Black text for active item */
+}
+
+.nav-link.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #ff6f61, #7f78d2); /* Updated gradient underline */
+  margin-top: 4px;
+}
+
+/* Navigation Styling */
+nav {
+  display: flex;
+  gap: 1.25rem; /* Adjust spacing between navigation items */
+  align-items: center;
+}
+
+/* Individual Link Styling */
+nav a {
+  
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: var(--font-size-base);
+  padding: 0.5rem 0.75rem; /* Padding for better clickability */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+nav a:hover {
+  color: var(--accent-color); /* Accent color on hover */
+}
+
+/* Language Toggle Styling */
+.header-right {
+  
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Adjust spacing for language toggle */
+  color: var(--text-color);
+}
+
+.header-right a {
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.header-right a:hover {
+  color: var(--accent-color);
+}
+
+/* Adjustments for RTL */
+html[dir="rtl"] nav,
+html[dir="rtl"] .header-right {
+  flex-direction: row-reverse; /* Mirror layout for RTL */
+}
+
+html[dir="rtl"] nav a,
+html[dir="rtl"] .header-right a {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* ========================
+   Mobile Navigation Styling
+======================== */
+
+/* Hide the menu toggle button for larger screens */
+#menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block; /* Show menu toggle on small screens */
+  }
+
+  #mobile-menu {
+    display: none; /* Initially hidden */
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(-10%);
+  }
+  
+  /* When mobile menu is active, it becomes visible */
+  #mobile-menu.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+
+  /* Navigation is hidden by default for mobile */
+  nav {
+    display: none;
+  }
+
+  /* Make mobile nav visible when active */
+  #nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/* ========================
+   About Section Styles
+======================== */
+/* Ensure line-height for Arabic text to avoid cut-off */
+.section-title, .section-subtitle {
+  font-size: var(--font-size-large);
+  font-weight: bold;
+  line-height: 1.2; /* Adjust line-height for Arabic text */
+  margin-bottom: 1.5rem;
+  background: var(--accent-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-align: center; /* Center-align title */
+}
+
+/* Specific line-height for Arabic content */
+html[dir="rtl"] .section-title,
+html[dir="rtl"] .section-subtitle {
+  line-height: 1.8; /* Increase line height for better spacing */
+  margin-bottom: 0.5rem; /* Adjust bottom margin to prevent cut-off */
+}
+
+/* Optional: Slight padding adjustment */
+.section-title {
+  padding-bottom: 0.1rem; /* Small bottom padding if needed */
+}
+
+
+.section {
+  min-height: 100vh;
+  padding: calc(var(--spacing-large) + 4rem) var(--spacing-base) var(--spacing-large);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: flex-start; /* Align content to the top */
+  text-align: center;
+  padding-top: var(--header-height); /* Offset from fixed header */
+}
+
+.about {
+  width: 100%;
+  max-width: 40rem; /* Limit width for readability */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  margin-top: var(--spacing-large); /* Space from top */
+  text-align: center;
+}
+
+.section-title {
+  font-size: var(--font-size-large);
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  background: var(--accent-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  font-size: var(--font-size-medium);
+  color: #5e60ce; /* Updated color for better emphasis */
+  margin-bottom: 1.5rem;
+}
+
+.section-text {
+  font-size: 1.125rem;
+  color: #495057; /* Slightly darker for better contrast */
+  line-height: 1.6;
+  max-width: 35rem; /* Limit text width for readability */
+  margin: 0 auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+/* ========================
+   Projects Section
+======================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 48rem) {
+  /* 768px */
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  /* 1024px */
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 1); /* Neumorphic shadow */
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover,
+.project-card:focus {
+  transform: translateY(-0.5rem);
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.15), -8px -8px 16px rgba(255, 255, 255, 1);
+  outline: none;
+}
+
+.project-card .content {
+  padding: var(--spacing-medium);
+  text-align: left;
+}
+
+html[dir="rtl"] .project-card .content {
+  text-align: right;
+}
+
+.project-title {
+  font-size: var(--font-size-medium);
+  color: #2e384d;
+  margin-bottom: 0.5rem;
+}
+
+.project-description {
+  font-size: var(--font-size-base);
+  color: #495057;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.project-link {
+  color: #5e60ce;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.project-link:hover,
+.project-link:focus {
+  color: #8b5cf6;
+  outline: none;
+}
+
+/* General Improvements */
+:root {
+  --spacing-large: 2rem;
+  --spacing-medium: 1.5rem;
+  --font-size-base: 1rem;
+  --font-size-medium: 1.25rem;
+  --accent-color: #6366f1; /* Consistent accent color for links */
+  --accent-gradient: linear-gradient(45deg, #6366f1, #8b5cf6); /* Gradient for title text */
+} 
+
+/* Accessibility Improvements */
+.project-card {
+  cursor: pointer; /* Better UX indicating cards are interactive */
+}
+
+.project-card:focus-visible {
+  outline: 2px solid #8b5cf6; /* Focus indication for improved accessibility */
+}
+
+/* Performance and Consistency Improvements */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+} /* Remove default inline spacing below images */
+
+
+
+/* CSS for Neumorphic Styled CV Download Button with Gradient Text */
+.cv-download-button {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  background-color: #f0f0f3;
+  color: #333;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.15), -8px -8px 15px rgba(255, 255, 255, 1);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.25rem;
+  text-align: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(45deg, #ff007f, #8700ff, #007aff);
+}
+
+.cv-download-button:hover,
+.cv-download-button:focus {
+  background-color: #e0e0e0;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2), -6px -6px 10px rgba(255, 255, 255, 0.9);
+  outline: none;
+}
+
+.cv-download-button:active {
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2), inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+}
+
+
+
+
+/* Project and Contact Section Styling */
+#projects, #contact {
+  background-color: rgba(255, 255, 255, 0); /* Semi-transparent white */
+  backdrop-filter: blur(5px); /* Optional: adds a subtle blur effect */
+  padding: 2rem;
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
+
+/* ========================
+   Frameworks Section
+======================== */
+.frameworks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 48rem) {
+  .frameworks-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  /* 1024px */
+  .frameworks-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.framework-item {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: var(--spacing-medium);
+  text-align: center;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 1); /* Neumorphic shadow */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.framework-item:hover,
+.framework-item:focus {
+  transform: translateY(-0.5rem);
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.15), -8px -8px 16px rgba(255, 255, 255, 1);
+  outline: none;
+}
+
+.framework-item img {
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+}
+
+.framework-item p {
+  font-size: var(--font-size-base);
+  color: #495057;
+}
+
+/* ========================
+   Contact Section
+======================== */
+.contact-form {
+  max-width: 40rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+html[dir="rtl"] .contact-form .form-group {
+  text-align: right;
+}
+
+.contact-form label {
+  display: block;
+  font-size: var(--font-size-base);
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: var(--font-size-base);
+  color: #2e384d;
+  background-color: #ffffff;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 1);
+  transition: box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: none;
+  outline: none;
+  box-shadow: inset 8px 8px 16px rgba(0, 0, 0, 0.15), inset -8px -8px 16px rgba(255, 255, 255, 1);
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form button:hover,
+.contact-form button:focus {
+  background-color: #7f78d2;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.15), -8px -8px 16px rgba(255, 255, 255, 1);
+  outline: none;
+}
+
+/* Adjust input text alignment based on direction */
+.contact-form input,
+.contact-form textarea {
+  text-align: left;
+}
+
+html[dir="rtl"] .contact-form input,
+html[dir="rtl"] .contact-form textarea {
+  text-align: right;
+}
+
+/* ========================
+   Footer Styles
+======================== */
+footer {
+  background-color: #ffffff;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 1); /* Neumorphic shadow */
+  padding: 2rem 0;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+  footer .container {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+footer h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: var(--accent-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+footer p {
+  color: #6b7280;
+}
+
+footer .social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+footer .social-icons a {
+  color: #6b7280;
+  transition: color 0.3s;
+}
+
+footer .social-icons a:hover,
+footer .social-icons a:focus {
+  color: #5e60ce;
+  outline: none;
+}
+
+footer .social-icons img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+footer .contact-info {
+  margin-top: 1rem;
+}
+
+footer a {
+  color: #5e60ce;
+  text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Adjust footer alignment for RTL */
+html[dir="rtl"] footer .container {
+  text-align: right;
+}
+
+@media (min-width: 48rem) {
+  html[dir="rtl"] footer .container {
+    flex-direction: row-reverse;
+  }
+}
+
+/* ========================
+   Responsive Adjustments
+======================== */
+@media (max-width: 47.9375rem) {
+  /* 767px */
+  header .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  .header-right {
+    margin-top: 1rem;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+  }
+
+  footer .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  html[dir="rtl"] footer .container {
+    text-align: center;
+  }
+}
+
+/* ========================
+   Accessibility Focus Styles
+======================== */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px dashed var(--accent-color);
+  outline-offset: 4px;
+}
+
+/* ========================
+   Icon Styles
+======================== */
+.header-right img {
+  width: 60px; /* Set the desired width */
+  height: auto; /* Allow height to adjust automatically to maintain aspect ratio */
+  object-fit: contain; /* Ensure the entire image is visible without cropping */
+}
+
+/* Background Blur Effect */
+.background-wrapper::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 30% 30%, rgba(94, 96, 206, 0.124), transparent 50%),
+              radial-gradient(circle at 70% 70%, rgba(255, 110, 199, 0.106), transparent 50%),
+              radial-gradient(circle at 50% 50%, rgba(114, 103, 240, 0.107), transparent 50%);
+  filter: blur(80px);
+  z-index: -1; /* Ensure it's behind all content */
+  pointer-events: none; /* Make it non-interactive */
+}
+
+@media (max-width: 768px) {
+  .background-wrapper::before {
+    filter: blur(60px);
+  }
+}
+/* Header Styles */
+header {
+  background-color: #ffffff;
+  padding: 1rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 1); /* Soft shadow */
+}
+
+/* Mobile Header Adjustment for Corner Placement */
+@media (max-width: 768px) {
+  header {
+    position: relative; /* Enable absolute positioning of inner elements */
+    height: var(--header-height); /* Consistent height for the header */
+    padding: 0 1rem;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center; /* Vertically align everything to the center */
+    justify-content: center; /* Keep it centered horizontally if needed */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 1);
+  }
+
+  /* Logo on Left Corner */
+  header .logo {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    font-size: 1.5rem; /* Adjust size if needed for better visibility */
+    font-weight: bold;
+    background: var(--accent-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+  }
+
+  /* GitHub and Language Section on Right Corner */
+  .header-right {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: row; /* GitHub and Language links side by side */
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  #git, #language-toggle {
+    font-weight: bold;
+    color: var(--text-color);
+    font-size: var(--font-size-base);
+    text-decoration: none;
+    line-height: var(--header-height); /* Ensure the line-height matches the header height */
+  }
+
+  #git:hover, #language-toggle:hover {
+    color: var(--accent-color); /* Accent color on hover */
+  }
+}
