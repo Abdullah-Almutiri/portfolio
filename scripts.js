@@ -9,19 +9,27 @@ const translations = {
       subtitle: 'AI & Machine Learning Engineer',
       text: "I'm Abdullah Almutairi, specializing in AI and Machine Learning, focused on innovative tech solutions to solve real-world problems."
     },
-    projectsTitle: 'Projects I Worked On',
+    projectsTitle: 'Projects I’ve Worked On',
     projects: [
       {
-        title: 'SADA (2024-Present)',
-        description: 'Alert Analysis and Acoustic Detection. Sada is an AI-based system designed to monitor and analyze urban noise pollution...'
+        title: 'Coming Soon',
+        role: '',
+        description: ''
       },
       {
-        title: 'Myopia and Hyperopia Detection System (2024-Present)',
-        description: 'This project focuses on diagnosing myopia and hyperopia using high-resolution eye images, employing deep learning models...'
+        title: 'Digital Image Processing and Analysis',
+        role: '',
+        description: 'Developed advanced image processing algorithms to enhance the contrast of digital images using techniques such as histogram equalization, linear intensity transformation, and logarithmic transformations. These enhancements significantly improved image clarity and quality for subsequent analysis tasks.'
       },
       {
-        title: 'User Data Analysis (2023)',
-        description: 'A project aimed at analyzing user data to understand behavior and provide personalized recommendations using machine learning techniques...'
+        title: 'Machine Learning Experimentation with Medical Datasets',
+        role: '',
+        description: 'Conducted comprehensive machine learning analyses on medical datasets related to heart disease, diabetes, and breast cancer. Leveraged tools such as scikit-learn and pandas for model development, resulting in predictive models that aid in early diagnosis and treatment planning.'
+      },
+      {
+        title: 'Quadratic Congruence Solver',
+        role: '',
+        description: 'Developed and implemented a solver for quadratic congruences, facilitating efficient solutions in computational number theory applications. This tool is instrumental in cryptographic algorithms and other mathematical computations requiring modular arithmetic solutions.'
       }
     ],
     frameworksTitle: 'Frameworks I Work With',
@@ -47,7 +55,7 @@ const translations = {
     title: 'عبدالله المطيري - مهندس ذكاء اصطناعي وتعلم الآلة',
     description: 'محفظة عبدالله المطيري الشخصية التي تعرض المشاريع والمهارات ومعلومات الاتصال. متخصص في الذكاء الاصطناعي وتعلم الآلة.',
     logo: 'عبدالله',
-    nav: ['عنّي', 'مشاريعي', 'أطر العمل ', 'تواصل معي'],
+    nav: ['عنّي', 'مشاريعي', 'أطر العمل', 'تواصل معي'],
     about: {
       name: 'عبدالله المطيري',
       subtitle: 'مهندس ذكاء اصطناعي وتعلم الآلة',
@@ -56,16 +64,24 @@ const translations = {
     projectsTitle: 'مشاريع عملت عليها',
     projects: [
       {
-        title: 'صدى (2024-الحاضر)',
-        description: 'تحليل التنبيه والكشف الصوتي. صدى هو نظام قائم على الذكاء الاصطناعي مصمم لمراقبة وتحليل التلوث الصوتي الحضري...'
+        title: 'قريبًا',
+        role: '',
+        description: ''
       },
       {
-        title: 'نظام كشف قصر وطول النظر (2024-الحاضر)',
-        description: 'يركز هذا المشروع على تشخيص قصر وطول النظر باستخدام صور عالية الدقة للعين، وذلك باستخدام نماذج التعلم العميق...'
+        title: 'معالجة وتحليل الصور الرقمية',
+        role: '',
+        description: 'طورت خوارزميات لتحسين تباين الصور الرقمية باستخدام تساوي الهستوجرام وتحويلات الكثافة. هذه التحسينات حسنت بشكل كبير من وضوح وجودة الصور لتحليلها لاحقًا.'
       },
       {
-        title: 'تحليل بيانات المستخدمين (2023)',
-        description: 'مشروع يهدف إلى تحليل بيانات المستخدمين لفهم سلوكهم وتقديم توصيات مخصصة باستخدام تقنيات التعلم الآلي...'
+        title: 'تجارب تعلم آلي مع مجموعات البيانات الطبية',
+        role: '',
+        description: 'حللت مجموعات بيانات طبية لأمراض القلب والسكري وسرطان الثدي باستخدام scikit-learn وpandas لبناء نماذج تنبؤية، مما يساعد في التشخيص المبكر وتخطيط العلاج.'
+      },
+      {
+        title: 'حلال التوافق التربيعي',
+        role: '',
+        description: 'نفذت حلالًا للتوافقات التربيعية، مما يساعد في إيجاد حلول فعالة في تطبيقات نظرية الأعداد الحسابية. هذا الأداة مفيدة في خوارزميات التشفير والحسابات المعيارية.'
       }
     ],
     frameworksTitle: 'أدوات أعمل بها',
@@ -112,26 +128,33 @@ function applyTranslations(lang) {
   document.querySelectorAll('.nav-link').forEach((el, i) => {
     el.textContent = t.nav[i];
   });
+
   // About Section
   document.querySelector('#about .section-title').textContent = t.about.name;
   document.querySelector('#about .section-subtitle').textContent = t.about.subtitle;
   document.querySelector('#about .section-text').textContent = t.about.text;
+
   // Projects Section
   document.querySelector('#projects .section-title').textContent = t.projectsTitle;
-  const projectTitles = document.querySelectorAll('.project-title');
-  const projectDescriptions = document.querySelectorAll('.project-description');
-  t.projects.forEach((proj, i) => {
-    projectTitles[i].textContent = proj.title;
-    projectDescriptions[i].textContent = proj.description;
+  const projectCards = document.querySelectorAll('.project-card');
+
+  projectCards.forEach((card, i) => {
+    const title = card.querySelector('.project-title');
+    const description = card.querySelector('.project-description');
+    if (title && t.projects[i]) {
+      title.textContent = t.projects[i].title;
+    }
+    if (description && t.projects[i].description) {
+      description.textContent = t.projects[i].description;
+    }
   });
-  document.querySelectorAll('.project-link').forEach(el => {
-    el.textContent = lang === 'ar' ? 'اقرأ المزيد →' : 'Read more →';
-  });
+
   // Frameworks Section
   document.querySelector('#frameworks .section-title').textContent = t.frameworksTitle;
   document.querySelectorAll('.framework-item p').forEach((el, i) => {
     el.textContent = t.frameworks[i];
   });
+
   // Contact Section
   document.querySelector('#contact .section-title').textContent = t.contactTitle;
   document.querySelector('.contact-form label[for="name"]').textContent = t.contact.name;
@@ -141,19 +164,21 @@ function applyTranslations(lang) {
   document.querySelector('.contact-form label[for="message"]').textContent = t.contact.message;
   document.querySelector('.contact-form textarea#message').setAttribute('placeholder', t.contact.placeholderMessage);
   document.querySelector('.contact-form button').textContent = t.contact.send;
+
   // Footer
   document.getElementById('footer-name').textContent = t.about.name;
   document.getElementById('footer-rights').textContent = t.footer.rights;
   document.getElementById('footer-stay-connected').textContent = t.footer.stayConnected;
   document.getElementById('footer-email-label').textContent = t.footer.email;
-  // Email address remains the same
-  // Text Alignment
+
+  // Update Text Alignment
   if (lang === 'ar') {
     document.querySelector('footer').style.textAlign = 'right';
   } else {
     document.querySelector('footer').style.textAlign = 'left';
   }
 }
+
 // scripts.js
 // Updated scripts.js
 
@@ -239,6 +264,36 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("click", function (event) {
     if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
       mobileMenu.classList.remove("active");
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleSwitch = document.getElementById('theme-toggle');
+  const currentTheme = localStorage.getItem('theme');
+
+  // Apply saved theme on load
+  if (currentTheme) {
+    document.body.classList.add(currentTheme);
+    if (currentTheme === 'dark') {
+      toggleSwitch.checked = true;
+    }
+  } else {
+    // Optional: Apply system preference
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.classList.add('dark');
+      toggleSwitch.checked = true;
+    }
+  }
+
+  // Listen for toggle changes
+  toggleSwitch.addEventListener('change', () => {
+    if (toggleSwitch.checked) {
+      document.body.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
   });
 });
