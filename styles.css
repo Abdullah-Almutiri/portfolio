@@ -310,9 +310,44 @@ html[dir="rtl"] .section-subtitle {
     font-size: 2.25rem;
   }
 }
+
+
 /* ========================
    Projects Section
 ======================== */
+
+
+
+#coming-soon-card {
+  font-size: 5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #8a3ab9, #bc2a8d, #f56040);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: floating 4s ease-in-out infinite, bounce 2s infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -333,14 +368,30 @@ html[dir="rtl"] .section-subtitle {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 .project-card {
   background-color: #ffffff;
   border-radius: 1rem;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 1); /* Neumorphic shadow */
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem; /* Add padding to bring content closer to the border */
 }
+
+.project-card .content {
+  padding: 3rem; /* Reduce padding to make the text closer to the card's border */
+  text-align: center;
+  flex-grow: 3; /* Make the content grow to fill available space */
+}
+
+html[dir="rtl"] .project-card .content {
+  text-align: right;
+}
+
 
 .project-card:hover,
 .project-card:focus {
@@ -391,7 +442,7 @@ html[dir="rtl"] .project-card .content {
   --font-size-base: 1rem;
   --font-size-medium: 1.25rem;
   --accent-color: #6366f1; /* Consistent accent color for links */
-  --accent-gradient: linear-gradient(45deg, #6366f1, #8b5cf6); /* Gradient for title text */
+  --accent-gradient:  linear-gradient(to right, #a24bf9, #8a4bfe, #fc5e86); /* Gradient for title text */
 } 
 
 /* Accessibility Improvements */
@@ -802,3 +853,4 @@ header {
     color: var(--accent-color); /* Accent color on hover */
   }
 }
+
