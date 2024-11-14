@@ -118,6 +118,10 @@ document.getElementById('language-toggle').addEventListener('click', function() 
   html.setAttribute('dir', newLang === 'ar' ? 'rtl' : 'ltr');
   this.textContent = translations[newLang].languageToggle;
   applyTranslations(newLang);
+  // Scroll to the top of the page after language change
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100); // Adding a slight delay of 100ms
 });
 
 function applyTranslations(lang) {
@@ -297,3 +301,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // Scroll to the top of the page on refresh
+    window.scrollTo(0, 0);
+  });
+
+
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual"; // Forces manual scroll restoration to start at the top
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    window.location.hash = "#home";
+  });
+
+
+  
