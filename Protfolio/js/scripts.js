@@ -163,13 +163,14 @@ document.addEventListener('scroll', () => {
   if (!aosInitialized) {
     AOS.init({
       once: true,  // Animation should happen only once
-      duration: 1000,  // Animation duration in milliseconds
-      easing: 'ease-in-out',  // Easing function for animations
-      offset: 100,  // Offset from the original trigger point
+      duration: 600,  // Reduced animation duration to 600ms for a faster feel
+      easing: 'ease-out',  // Faster easing function for more snappy animations
+      offset: 0,  // Reduced offset to trigger animations earlier
     });
     aosInitialized = true;
   }
 });
+
 
 // Function to handle smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -241,4 +242,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
