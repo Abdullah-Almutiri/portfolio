@@ -7,7 +7,7 @@ const translations = {
     about: {
       name: 'Abdullah Almutairi',
       subtitle: 'AI & Machine Learning Engineer',
-      text: "I'm Abdullah Almutairi, specializing in AI and Machine Learning, focused on innovative tech solutions to solve real-world problems."
+      text: "Abdullah Almutairi, specializing in AI and Machine Learning, focused on innovative tech solutions to solve real-world problems."
     },
     projectsTitle: 'Projects I’ve Worked On',
     projects: [
@@ -59,7 +59,7 @@ const translations = {
     about: {
       name: 'عبدالله المطيري',
       subtitle: 'مهندس ذكاء اصطناعي وتعلم الآلة',
-      text: 'أنا عبدالله المطيري، طالب علوم حاسب في جامعة الملك سعود متخصص في الذكاء الاصطناعي وتعلم الآلة، أهدف لصناعة حلول تقنية مبتكرة بأستخدام الذكاء الأصطناعي.'
+      text: 'أهلا، أنا عبدالله المطيري، طالب علوم حاسب في جامعة الملك سعود متخصص في الذكاء الاصطناعي وتعلم الآلة، أعمل لصناعة حلول تقنية مبتكرة بأستخدام الذكاء الأصطناعي.'
     },
     projectsTitle: 'مشاريع عملت عليها',
     projects: [
