@@ -40,15 +40,9 @@
       <a href="#about" class="logo text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500">
         Abdullah
       </a>
+      
       <!-- Hamburger Button -->
-      <div class="md:hidden">
-        <button id="hamburger" class="text-gray-700 focus:outline-none">
-          <!-- Hamburger Icon SVG -->
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
+      
 
       <nav aria-label="Primary Navigation">
         <ul class="flex space-x-6">
@@ -61,7 +55,8 @@
 
       <div class="header-right flex items-center space-x-4">
         <a href="https://github.com/yourusername" aria-label="GitHub" class="focus:outline-none focus:underline" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
-          <img src="images/GitHub-Logos/GitHub_Logo.png" alt="GitHub Logo" class="w-6 h-6">
+          <button id="git" class="text-gray-800 hover:text-blue-500 focus:outline-none focus:underline" aria-label="Toggle Language" data-aos="fade-left" data-aos-delay="700">GitHub</button>
+      
         </a>
         <span class="text-gray-400" data-aos="fade-left" data-aos-delay="600">|</span>
         <button id="language-toggle" class="text-gray-800 hover:text-blue-500 focus:outline-none focus:underline" aria-label="Toggle Language" data-aos="fade-left" data-aos-delay="700">العربية</button>
@@ -71,19 +66,19 @@
 
 
 
-      
+          
       <!-- Mobile Menu -->
-      <nav id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-white z-50 flex flex-col items-center justify-center">
-        <button id="close-menu" class="absolute top-4 right-4 focus:outline-none">
-          <img src="images/icons8-close-48.png" alt="Close Icon" class="w-8 h-8">
-        </button>
-        <ul class="flex flex-col space-y-8 text-center text-2xl">
-          <li><a href="#about" class="nav-link text-gray-800 hover:text-blue-500 focus:outline-none focus:underline">About</a></li>
-          <li><a href="#projects" class="nav-link text-gray-800 hover:text-blue-500 focus:outline-none focus:underline">Projects</a></li>
-          <li><a href="#frameworks" class="nav-link text-gray-800 hover:text-blue-500 focus:outline-none focus:underline">Frameworks</a></li>
-          <li><a href="#contact" class="nav-link text-gray-800 hover:text-blue-500 focus:outline-none focus:underline">Contact</a></li>
-        </ul>
-      </nav>
+    <nav id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-white z-50 flex flex-col items-center justify-center">
+      <button id="close-menu" class="absolute top-4 right-4 focus:outline-none">
+        <img src="images/icons8-cancel-150.png" alt="Close Icon" class="w-8 h-8">
+      </button>
+      <ul class="flex flex-col space-y-8 text-center text-2xl">
+        <li><a href="#about" class="nav-link text-gray-800 hover:text-blue-500">About</a></li>
+        <li><a href="#projects" class="nav-link text-gray-800 hover:text-blue-500">Projects</a></li>
+        <li><a href="#frameworks" class="nav-link text-gray-800 hover:text-blue-500">Frameworks</a></li>
+        <li><a href="#contact" class="nav-link text-gray-800 hover:text-blue-500">Contact</a></li>
+      </ul>
+    </nav>
   
 
   <!-- Main Content -->
@@ -108,7 +103,7 @@
 
 
     <!-- Projects Section -->
-    <section id="projects" class="section py-12 bg-gray-100" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
+    <section id="projects" class="section py-12 bg-gray-100" data-aos="fade" data-aos-delay="100" data-aos-duration="1000">
       <div class="container mx-auto text-center">
         <h2 class="section-title text-3xl font-bold mb-8" data-aos="fade-up" data-aos-duration="800">Projects I Worked On</h2><br><br>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -202,10 +197,10 @@
 
 
 <!-- Contact Section -->
-<section id="contact" class="section py-12 bg-gray-100" data-aos="fade-up" data-aos-delay="80">
+<section id="contact" class="section py-12 bg-gray-100" data-aos="fade-up" data-aos-delay="100">
   <div class="container mx-auto text-center">
     <h2 class="section-title text-3xl font-bold mb-8" data-aos="fade-up">Contact Me</h2>
-    <form class="contact-form max-w-lg mx-auto" action="http://127.0.0.1:5000/send_email" method="POST" data-aos="fade-up" data-aos-delay="100">
+    <form class="contact-form max-w-lg mx-auto" action="http://127.0.0.1:5000/send_email" method="POST" data-aos="fade-up" data-aos-delay="200">
       <div class="form-group mb-6" data-aos="fade-up" data-aos-delay="100">
         <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
         <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -252,7 +247,13 @@
       </div>
     </div>
   </footer>
-  
+
+
+<!-- Fixed CV Download Button -->
+<a href="Abdullah Almutairi CV copy.pdf" download  target="_blank" class="cv-download-button">
+  Download CV
+</a>
+
   <form class="contact-form max-w-lg mx-auto" action="/send_email" method="POST" data-aos="fade-up" data-aos-delay="300">
 
  <!-- External JavaScript -->
