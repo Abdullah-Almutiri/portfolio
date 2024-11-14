@@ -7,7 +7,7 @@ const translations = {
     about: {
       name: 'Abdullah Almutairi',
       subtitle: 'AI & Machine Learning Engineer',
-      text: "Abdullah Almutairi, specializing in AI and Machine Learning, focused on innovative tech solutions to solve real-world problems."
+      text: "I'm Abdullah Almutairi, specializing in AI and Machine Learning, focused on innovative tech solutions to solve real-world problems."
     },
     projectsTitle: 'Projects I’ve Worked On',
     projects: [
@@ -59,7 +59,7 @@ const translations = {
     about: {
       name: 'عبدالله المطيري',
       subtitle: 'مهندس ذكاء اصطناعي وتعلم الآلة',
-      text: 'أهلا، أنا عبدالله المطيري، طالب علوم حاسب في جامعة الملك سعود متخصص في الذكاء الاصطناعي وتعلم الآلة، أعمل لصناعة حلول تقنية مبتكرة بأستخدام الذكاء الأصطناعي.'
+      text: 'أنا عبدالله المطيري، طالب علوم حاسب في جامعة الملك سعود متخصص في الذكاء الاصطناعي وتعلم الآلة، أهدف لصناعة حلول تقنية مبتكرة بأستخدام الذكاء الأصطناعي.'
     },
     projectsTitle: 'مشاريع عملت عليها',
     projects: [
@@ -72,9 +72,8 @@ const translations = {
         title: 'معالجة وتحليل الصور الرقمية',
         role: '',
         description: 'قمت بتطوير خوارزميات متقدمة لتعزيز التباين البصري للصور الرقمية باستخدام تقنيات مثل histogram equalization، وlinear intensity transformation، وlogarithmic transformations. هذه التحسينات لم تقتصر على تحسين وضوح وجودة الصور فحسب، بل مهدت الطريق لاستخلاص رؤى أكثر دقة في التحليلات اللاحقة، مما يزيد من موثوقية النتائج ويدعم اتخاذ قرارات أكثر دقة.'      },
-      },
       {
-        title: 'مقارنة التعلم الآلي مع مجموعة بيانات طبية',
+        title: 'تجارب تعلم آلي مع مجموعات البيانات الطبية',
         role: '',
         description: 'حللت مجموعات بيانات طبية لأمراض القلب والسكري وسرطان الثدي باستخدام scikit-learn وpandas لبناء نماذج تنبؤية، مما يساعد في التشخيص المبكر وتخطيط العلاج.'
       },
@@ -86,7 +85,7 @@ const translations = {
     ],
     frameworksTitle: 'أدوات أعمل بها',
     frameworks: ['TensorFlow', 'Pandas', 'Google Colab', 'MATLAB', 'OpenCV'],
-    contactTitle: 'تواصل معنا',
+    contactTitle: 'تواصل معي',
     contact: {
       name: 'الاسم',
       email: 'البريد الإلكتروني',
@@ -118,10 +117,11 @@ document.getElementById('language-toggle').addEventListener('click', function() 
   html.setAttribute('dir', newLang === 'ar' ? 'rtl' : 'ltr');
   this.textContent = translations[newLang].languageToggle;
   applyTranslations(newLang);
+
   // Scroll to the top of the page after language change
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 100); // Adding a slight delay of 100ms
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 100); // Adding a slight delay of 100ms
 });
 
 function applyTranslations(lang) {
@@ -301,7 +301,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
 
 
   document.addEventListener("DOMContentLoaded", function() {
