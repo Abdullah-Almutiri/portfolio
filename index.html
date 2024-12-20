@@ -344,15 +344,15 @@
 
     // Add form submission handler
     document.getElementById('contact-form').addEventListener('submit', function(event) {
-        // Send email using EmailJS
+        // Use EmailJS to send the form data
         emailjs.sendForm('service_g71n9fi', 'template_30x9boa', this)
             .then(function() {
-                alert('Message sent successfully!');
+                alert('Message sent successfully! The page will now refresh.');
             }, function(error) {
                 alert('Failed to send message: ' + JSON.stringify(error));
             });
 
-        // No event.preventDefault(); The form will refresh after submission
+        // Allow form submission to proceed normally (page refresh)
     });
 </script>
 
