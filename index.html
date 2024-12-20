@@ -254,23 +254,22 @@
   </div>
 </section>
 
-
 <!-- Contact Section -->
 <section id="contact" class="section py-12 bg-gray-100" data-aos="fade-up" data-aos-delay="100">
     <div class="container mx-auto text-center">
         <h2 class="section-title text-3xl font-bold mb-8" data-aos="fade-up">Contact Me</h2><br><br>
         <form id="contact-form" class="contact-form max-w-lg mx-auto" data-aos="fade-up" data-aos-delay="200">
-            <div class="form-group mb-6" data-aos="fade-up" data-aos-delay="100">
-                <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
-                <input type="text" id="name" name="user_name" placeholder="Your Name" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <div class="form-group" data-aos="fade-up" data-aos-delay="100">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="user_name" placeholder="Your Name" required>
             </div>
-            <div class="form-group mb-6" data-aos="fade-up" data-aos-delay="200">
-                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                <input type="email" id="email" name="user_email" placeholder="Your Email" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <div class="form-group" data-aos="fade-up" data-aos-delay="200">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="user_email" placeholder="Your Email" required>
             </div>
-            <div class="form-group mb-6" data-aos="fade-up" data-aos-delay="300">
-                <label for="name" class="block text-gray-700 font-medium mb-2">Subject</label>
-                <select id="opportunity" name="user_opportunity" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <div class="form-group" data-aos="fade-up" data-aos-delay="300">
+                <label for="opportunity">I am interested in</label>
+                <select id="opportunity" name="user_opportunity" required>
                     <option value="" disabled selected>Select an option</option>
                     <option value="hiring">Hiring</option>
                     <option value="coop_opportunity">COOP Opportunity</option>
@@ -279,11 +278,11 @@
                     <option value="other">Other</option>
                 </select>
             </div>
-            <div class="form-group mb-6" data-aos="fade-up" data-aos-delay="400">
-                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Your Message" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            <div class="form-group" data-aos="fade-up" data-aos-delay="400">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
             </div>
-            <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition duration-300" data-aos="fade-up" data-aos-delay="120">Send</button>
+            <button type="submit" data-aos="fade-up" data-aos-delay="500">Send</button>
         </form>
     </div>
 </section>
