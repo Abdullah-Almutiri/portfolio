@@ -342,28 +342,29 @@
         emailjs.init("c9Q8qxw85oWnSROR8"); // Public Key
     })();
 
-    // Function to refresh the page
-    function refreshPage() {
+    // Force refresh function
+    function forceRefresh() {
         setTimeout(function() {
-            window.location.reload(); // Refresh the page after 1 second
-        }, 1000); // Delay the refresh to allow EmailJS submission to complete
+            window.location.reload(); // Reloads the page after 1 second
+        }, 1000); // 1-second delay
     }
 
     // Add form submission handler
     document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault(); // Prevent default form submission behavior
 
         // Send email using EmailJS
         emailjs.sendForm('service_g71n9fi', 'template_30x9boa', this)
             .then(function() {
                 alert('Message sent successfully!');
-                refreshPage(); // Call the function to refresh the page
             }, function(error) {
                 alert('Failed to send message: ' + JSON.stringify(error));
             });
+
+        // Call forceRefresh regardless of EmailJS success or failure
+        forceRefresh();
     });
 </script>
-
   
 </body>
 </html>
