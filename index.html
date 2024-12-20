@@ -336,7 +336,6 @@
 
 
   <!-- EmailJS Integration -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
     // Initialize EmailJS
     (function() {
@@ -345,8 +344,6 @@
 
     // Add form submission handler
     document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
-        
         // Send email using EmailJS
         emailjs.sendForm('service_g71n9fi', 'template_30x9boa', this)
             .then(function() {
@@ -354,6 +351,8 @@
             }, function(error) {
                 alert('Failed to send message: ' + JSON.stringify(error));
             });
+
+        // No event.preventDefault(); The form will refresh after submission
     });
 </script>
 
