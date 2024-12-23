@@ -5,7 +5,7 @@
   --bg-color: #e6e7ee; /* Soft light gray for neumorphism effect */
   --text-color: #2e384d; /* Darker text color for better contrast */
   --accent-color: #5e60ce;
-  --accent-gradient: linear-gradient(90deg, #ff758f, #765efb, #43e8d8);
+  --accent-gradient: linear-gradient(to right,#4b6cb7, #4b6cb7,#182848);
   --font-family-en: 'Roboto', sans-serif; /* For English */
   --font-family-ar: 'Cairo', sans-serif; /* For Arabic */
   --font-size-large: 3rem;
@@ -479,7 +479,7 @@ img {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-image: linear-gradient(45deg, #ff007f, #8700ff, #007aff);
+  background-image: linear-gradient(to right,#4b6cb7, #4b6cb7,#182848);
 }
 
 .cv-download-button:hover,
@@ -637,10 +637,11 @@ html[dir="rtl"] .contact-form select {
 }
 
 
+
 .contact-form button {
   width: 100%;
   padding: 1rem;
-  background-color: var(--accent-color);
+  background-color:#4f73a4;
   color: #ffffff;
   font-size: 1.125rem;
   font-weight: bold;
@@ -653,7 +654,7 @@ html[dir="rtl"] .contact-form select {
 
 .contact-form button:hover,
 .contact-form button:focus {
-  background-color: #7f78d2;
+  background-color: #6386b6;
   box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.15), -8px -8px 16px rgba(255, 255, 255, 1);
   outline: none;
 }
