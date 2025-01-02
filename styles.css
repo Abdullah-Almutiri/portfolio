@@ -407,6 +407,12 @@ html[dir="rtl"] .section-subtitle {
   text-align: center;
 }
 
+#my-logo-card .logo-img {
+  width: 80px;
+  margin: 1rem auto 0;
+  display: block;
+}
+
 .project-card .content {
   padding: 1rem; /* Reduce padding for better fit on small screens */
   flex-grow: 1; /* Allow the content to grow */
