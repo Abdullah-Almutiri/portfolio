@@ -229,11 +229,7 @@ document.addEventListener('scroll', () => {
   }
 });
 
-// Contact form submission handling (example alert for demonstration)
-document.querySelector('.contact-form')?.addEventListener('submit', function (e) {
-  e.preventDefault();
-  alert('Thank you for your message! We will get back to you shortly.');
-});
+
 
 // Function to highlight active navigation links on scroll
 document.addEventListener('scroll', () => {
