@@ -360,6 +360,9 @@
             }, function(error) {
                 alert('Failed to send message: ' + JSON.stringify(error));
             });
+        setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 100); // Adding a slight delay of 100ms
     });
 </script>
   
