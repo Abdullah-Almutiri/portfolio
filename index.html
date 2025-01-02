@@ -260,6 +260,12 @@
   </div>
 </section>
 
+      <!-- Success Message (Hidden by Default) -->
+<div id="success-message" 
+     style="display: none; position: fixed; top: 0; width: 100%; padding: 10px; background-color: green; color: white; text-align: center;">
+    Message sent successfully!
+</div>
+
 <!-- Contact Section -->
 <section id="contact" class="section py-12 bg-gray-100" data-aos="fade-up" data-aos-delay="100">
     <div class="container mx-auto text-center">
@@ -353,16 +359,27 @@
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent default form submission
         
-        // Send email using EmailJS
+                // Send email using EmailJS
         emailjs.sendForm('service_g71n9fi', 'template_30x9boa', this)
-            .then(function() {
-                alert('Message sent successfully!');
-            }, function(error) {
+            .then(() => {
+                // Reset the form
+                document.getElementById('contact-form').reset();
+
+                // Show success message
+                const successMessageDiv = document.getElementById('success-message');
+                successMessageDiv.style.display = 'block';
+
+                // Scroll to top
+                window.scrollTo(0, 0);
+
+                // Hide message after 3 seconds
+                setTimeout(() => {
+                    successMessageDiv.style.display = 'none';
+                }, 3000);
+            })
+            .catch(error => {
                 alert('Failed to send message: ' + JSON.stringify(error));
             });
-        setTimeout(() => {
-    window.scrollTo(0, 0);
-  }, 100); // Adding a slight delay of 100ms
     });
 </script>
   
