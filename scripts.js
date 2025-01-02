@@ -17,6 +17,11 @@ const translations = {
         description: ''
       },
       {
+      title: '',
+        role: '',
+        description: 'A graduation project aimed at improving urban quality of life by combating noise pollution. SADA uses AI-powered real-time sound classification and monitoring, integrating deep learning, microcontrollers, and cloud services to provide actionable insights for urban planning, aligned with Saudi Vision 2030.'
+      },
+      {
         title: 'Digital Image Processing and Analysis',
         role: '',
         description: 'Developed advanced image processing algorithms to enhance the contrast of digital images using techniques such as histogram equalization, linear intensity transformation, and logarithmic transformations. These enhancements significantly improved image clarity and quality for subsequent analysis tasks.'
@@ -26,11 +31,8 @@ const translations = {
         role: '',
         description: 'Conducted comprehensive machine learning analyses on medical datasets related to heart disease, diabetes, and breast cancer. Leveraged tools such as scikit-learn and pandas for model development, resulting in predictive models that aid in early diagnosis and treatment planning.'
       },
-      {
-        title: 'Quadratic Congruence Solver',
-        role: '',
-        description: 'Developed and implemented a solver for quadratic congruences, facilitating efficient solutions in computational number theory applications. This tool is instrumental in cryptographic algorithms and other mathematical computations requiring modular arithmetic solutions.'
-      }
+    
+        
     ],
     frameworksTitle: 'Frameworks I Work With',
     frameworks: ['TensorFlow', 'Pandas', 'Google Colab', 'MATLAB', 'OpenCV'],
@@ -69,6 +71,12 @@ const translations = {
         description: ''
       },
       {
+        
+    title: '',
+    role: '',
+    description: "طورت نظام صدى لمراقبة وتحليل التلوث الضوضائي في المدن باستخدام تقنيات الذكاء الاصطناعي. يعتمد النظام على التصنيف اللحظي للأصوات باستخدام التعلم العميق، مع تكامل الميكروكنترولر والخدمات السحابية لتوفير رؤى تساعد في تحسين جودة الحياة والتخطيط الحضري، بما يتماشى مع رؤية السعودية 2030."
+},
+      {
         title: 'معالجة وتحليل الصور الرقمية',
         role: '',
         description: 'قمت بتطوير خوارزميات متقدمة لتعزيز التباين البصري للصور الرقمية باستخدام تقنيات مثل histogram equalization، وlinear intensity transformation، وlogarithmic transformations. هذه التحسينات لم تقتصر على تحسين وضوح وجودة الصور فحسب، بل مهدت الطريق لاستخلاص رؤى أكثر دقة في التحليلات اللاحقة، مما يزيد من موثوقية النتائج ويدعم اتخاذ قرارات أكثر دقة.'      },
@@ -77,11 +85,7 @@ const translations = {
         role: '',
         description: 'حللت مجموعات بيانات طبية لأمراض القلب والسكري وسرطان الثدي باستخدام scikit-learn وpandas لبناء نماذج تنبؤية، مما يساعد في التشخيص المبكر وتخطيط العلاج.'
       },
-      {
-        title: ' محلّل التوافقات التربيعية ',
-        role: '',
-        description: 'نفذت حلالًا للتوافقات التربيعية، مما يساعد في إيجاد حلول فعالة في تطبيقات نظرية الأعداد الحسابية. هذا الأداة مفيدة في خوارزميات التشفير والحسابات المعيارية.'
-      }
+  
     ],
     frameworksTitle: 'أدوات أعمل بها',
     frameworks: ['TensorFlow', 'Pandas', 'Google Colab', 'MATLAB', 'OpenCV'],
