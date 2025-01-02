@@ -822,9 +822,9 @@ textarea:focus {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(circle at 30% 30%, rgba(94, 96, 206, 0.124), transparent 50%),
-              radial-gradient(circle at 70% 70%, rgba(255, 110, 199, 0.106), transparent 50%),
-              radial-gradient(circle at 50% 50%, rgba(114, 103, 240, 0.107), transparent 50%);
+  background: radial-gradient(circle at 30% 30%, rgba(86, 126, 255, 0.124), transparent 50%),
+              radial-gradient(circle at 70% 70%, rgba(110, 187, 255, 0.106), transparent 50%),
+              radial-gradient(circle at 50% 50%, rgba(103, 183, 240, 0.107), transparent 50%);
   filter: blur(80px);
   z-index: -1; /* Ensure it's behind all content */
   pointer-events: none; /* Make it non-interactive */
