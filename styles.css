@@ -91,26 +91,27 @@
    MOBILE LAYOUT (SINGLE COLUMN)
 ============================== */
 @media (max-width: 768px) {
-  /* Keep the vertical line centered, or move it to left if you prefer */
+  /* Move line to the far left (e.g., 1rem from the edge) */
   .timeline::after {
-    left: 50%;
-    margin-left: -1px; /* Keep it centered */
+    left: 1rem;        /* Put the line near the left edge */
+    margin-left: 0;    /* No horizontal offset needed */
   }
 
-  /* Stack items in one column */
+  /* All items go full width and stack vertically,
+     but we leave space on the left for the line & bullet. */
   .timeline-item {
     width: 100%;
-    left: 0;                  /* Always start from left:0 */
-    margin-bottom: 2rem;      /* Spacing between items */
-    padding-left: 2rem;
-    padding-right: 2rem;
+    left: 0;                /* No horizontal offset for items */
+    margin-bottom: 2rem;    /* Spacing between items */
+    padding-left: 3rem;     /* Enough space for the line & bullet */
+    padding-right: 1rem;
   }
 
-  /* Center the bullet on the vertical line in mobile view */
+  /* Bullet moves to the left edge near the line */
   .timeline-item::after {
-    left: 50%;
+    left: 0;    /* Anchor bullet at left:0 (i.e., near line) */
     right: auto;
-    margin-left: -8px;        /* Half of bullet width, to center it */
+    margin-left: 0;
   }
 }
 
