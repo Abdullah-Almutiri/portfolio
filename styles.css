@@ -92,6 +92,31 @@
   font-size: 14px;
   margin-bottom: 8px;
 }
+/* RTL Overrides -------------------- */
+html[dir="rtl"] .timeline::after {
+  left: auto;
+  right: 50%;
+  margin-left: 0;
+  margin-right: -1px;
+}
+
+html[dir="rtl"] .timeline-item.left {
+  left: 50%;
+}
+
+html[dir="rtl"] .timeline-item.left::after {
+  right: auto;
+  left: -8px;
+}
+
+html[dir="rtl"] .timeline-item.right {
+  left: 0;
+}
+
+html[dir="rtl"] .timeline-item.right::after {
+  left: auto;
+  right: -8px;
+}
 
 /* New GitHub Button Styling */
 #git {
